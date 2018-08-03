@@ -1,1 +1,1 @@
-# amath_383_project
+# Hodgkin-Huxley Model for a neuron
