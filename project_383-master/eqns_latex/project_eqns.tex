@@ -1,0 +1,87 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphicx}
+
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\setlength{\parindent}{0pt}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Header
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Assignment number and due date
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  Problem 1: 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$ I = C \Delta V$ \\
+
+$I_K = g_k(t)(V - V_K)$ \\
+
+$I_{ext} = C_m \frac{dV_M}{dt} + g_K(t) (V_M -V_K)  + g_{Na}(t)  (V_M -V_{Na}) + g_L (V_M -V_L)$\\
+
+$\bar{g_K}, \bar{g_{Na}}, \bar{g_L}$ \\
+
+$V$ nullcline $(\dot{V} = 0)$\\
+ $W = I + V - \frac{V^3}{3}$\\
+ 
+$W$ nullcline $(\dot{W} = 0)$ \\
+$W = \frac{V + a}{b}$\\
+
+
+$\frac{b}{3} (V^*)^3 + (1-b)V^* + (a - Ib) = 0$\\
+$W^* = \frac{V^* + a}{b}$\\
+
+
+$\frac{d}{dt} \begin{pmatrix}
+x \\
+y
+\end{pmatrix} = J_f(V^*, W^*) \begin{pmatrix}
+x\\
+y
+\end{pmatrix}$ \\
+
+$J_f(V^*, W^*) = \begin{pmatrix}
+1 - (V^*)^2 & -1 \\
+\phi & -b\phi
+
+\end{pmatrix}$ \\
+
+$det(J_f - \lambda I) = (1 - (V^*)^2 - \lambda)(-b\phi - \lambda) + \phi = 0$ \\
+
+$\lambda^2 + (-1 + (V^*)^2 + b\phi)\lambda + (-b\phi + b\phi (V^*)^2 + \phi)$ \\
+
+$\lambda = \frac{1}{2} \left(-((V^*)^2 - 1 + b\phi) \pm \sqrt{((V^*)^2 - 1 + b\phi)^2 - 4(-b\phi + b\phi (V^*)^2 + \phi) }  \right)$ \\
+
+$\lambda = \frac{1}{2} \left(-((V^*)^2 - 1 + b\phi) \pm \sqrt{((V^*)^2 - 1 - b\phi)^2 - 4\phi }  \right)$
+
+\end{document}
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,11 @@
 close all;
+
+% Numerically integrates Hodgkin-Huxley model and plots solution for V(t).
+% Options available for several different stimuli. Also plots gating
+% variables in a lower subplot to see how they evolve in time with
+% voltage/the action potential.
+
+
 % gating function parameters taken from Foundations of Comp Neuroscience pg
 % 32: same values Hodgkin and Huxley got experimentally from squid
 % constant values on pg 32 of this textbook
@@ -15,9 +22,23 @@ E_k = -77;
 E_na = 50;
 E_l = -54.4;
 
-c_m = 1; % cannot find value for this
+% pg 17 of Foundations of Comp Neuroscience + pg 520 of Hodgkin-Huxley
+% paper
+c_m = 1; 
+
 phi = 1; % scales for temperature
-I_ex = @(t) 10 * (t >= 50) .* (t <= 100); % input current; constant in this case, but we can change that if we wish
+
+% input current (stimulus)
+
+% step current:
+I_ex =  @(t) 10 * (t >= 50) .* (t <= 100) + 1 * (t >= 150) .* (t <= 160) + 5 * (t >= 170) .* (t <= 180);
+
+% constant
+% I_ex = @(t) 10
+
+% zero mean noise: 
+%I_ex = @(t) 10*(rand(length(t),1) - 0.5);
+
 
 % x = [V n m h]
 diff_eqns = @(t,x) [
@@ -39,13 +60,16 @@ xlabel("time (ms)");
 legend({"V(t)", "threshold"});
 title("Action Potential");
 xlim(tspan)
+set(gca, 'fontsize', 15);
+ylim([-100, 100])
 
 subplot(312)
 I_vals = I_ex(t_vals);
 plot(t_vals, I_vals, 'm');
 ylabel("I_{ext}(t)")
 title("Applied Current I(t)");
-ylim([0 1.25*max(I_vals)]);
+ylim([min(I_vals)-1 1.25*max(I_vals)]);
+set(gca, 'fontsize', 15);
 
 subplot(313);
 plot(t_vals, y_vals(:, 2)), hold on;
@@ -54,5 +78,7 @@ plot(t_vals, y_vals(:, 4));
 title("Gating Variables")
 legend({"n", "m", "h"});
 xlim(tspan);
+
+set(gca, 'fontsize', 15);
 
 gcf
